@@ -1,40 +1,30 @@
-Absolutely! Here's a more **comprehensive and professional** `README.md` content for your **`aws-lambda-monitoring-alerting`** project. You can copy-paste or edit it directly in your project:
+Certainly! Here's the cleaned-up version of the `README.md` for your **`aws-lambda-monitoring-alerting`** project — no emojis and license section:
 
 ---
 
-```markdown
-# 🛡️ AWS Lambda Monitoring & Alerting
+````markdown
+# AWS Lambda Monitoring & Alerting
 
 This project implements a robust monitoring and alerting mechanism for AWS Lambda functions using native AWS services. It is designed to detect runtime anomalies and ensure quick operational responses through alert notifications.
 
----
+## Features
 
-## 📌 Features
+- Real-time monitoring of Lambda function metrics (errors, duration, invocations)
+- CloudWatch Alarms for threshold-based alerts
+- SNS Notifications to email or Slack
+- Log Insights queries to analyze execution patterns
+- Support for multiple Lambda functions
 
-- **Real-Time Monitoring** of Lambda function metrics (errors, duration, invocations)
-- **CloudWatch Alarms** for threshold-based alerts
-- **SNS Notifications** to email or Slack
-- **Log Insights Queries** to analyze execution patterns
-- **Support for Multiple Lambda Functions**
-
----
-
-## 🔧 Architecture Overview
-
-```
+## Architecture Overview
 
 Lambda → CloudWatch Logs → CloudWatch Metrics → Alarms → SNS → Email/Slack
-
-````
 
 - Lambda functions emit metrics and logs to CloudWatch
 - Alarms are created on key metrics (e.g., Errors > 0, Duration > threshold)
 - When triggered, alarms publish messages to SNS topics
 - Subscribers (email, Slack webhooks, etc.) receive instant notifications
 
----
-
-## 🛠️ Setup Instructions
+## Setup Instructions
 
 ### 1. Configure SNS Topic
 
@@ -65,30 +55,24 @@ aws cloudwatch put-metric-alarm \
 
 You can also define alarms via Terraform or CloudFormation.
 
----
+## Recommended Metrics to Monitor
 
-## 📊 Recommended Metrics to Monitor
+| Metric      | Description                                  |
+| ----------- | -------------------------------------------- |
+| Errors      | Count of failed invocations                  |
+| Duration    | Execution time of the function               |
+| Throttles   | Number of throttled invocations              |
+| Invocations | Total invocations                            |
+| IteratorAge | Age of last record for stream-based triggers |
 
-| Metric        | Description                                  |
-| ------------- | -------------------------------------------- |
-| `Errors`      | Count of failed invocations                  |
-| `Duration`    | Execution time of the function               |
-| `Throttles`   | Number of throttled invocations              |
-| `Invocations` | Total invocations                            |
-| `IteratorAge` | Age of last record for stream-based triggers |
-
----
-
-## 📬 Slack Integration (Optional)
+## Slack Integration (Optional)
 
 To integrate Slack notifications:
 
-1. Create an [Incoming Webhook](https://api.slack.com/messaging/webhooks)
-2. Use AWS Lambda or a custom SNS-to-Slack Lambda to forward alerts
+1. Create an Incoming Webhook from your Slack workspace
+2. Use AWS Lambda or a custom SNS-to-Slack Lambda function to forward alerts
 
----
-
-## 📁 Folder Structure
+## Folder Structure
 
 ```
 ├── alarms/                     # Sample alarm JSON templates
@@ -97,28 +81,12 @@ To integrate Slack notifications:
 └── README.md
 ```
 
----
-
-## 🚀 Future Enhancements
+## Future Enhancements
 
 * Integration with PagerDuty or Opsgenie
 * Dynamic alarm generation via tags
 * Dashboard visualization using CloudWatch or Grafana
 
----
-
-## 📄 License
-
-MIT
-
----
-
-## 👨‍💻 Author
+## Author
 
 Himanshu Choudhary
-
-```
-
----
-
-```
